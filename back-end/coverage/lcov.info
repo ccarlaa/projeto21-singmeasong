@@ -201,7 +201,7 @@ DA:21,1
 DA:25,2
 DA:27,2
 DA:32,2
-DA:33,0
+DA:33,1
 DA:38,4
 DA:39,4
 DA:41,3
@@ -224,15 +224,15 @@ DA:83,1
 DA:86,2
 DA:96,2
 LF:33
-LH:29
+LH:30
 BRDA:12,0,0,1
-BRDA:32,1,0,0
+BRDA:32,1,0,1
 BRDA:39,2,0,1
 BRDA:57,3,0,0
 BRDA:71,4,0,2
 BRDA:79,5,0,2
 BRF:6
-BRH:4
+BRH:5
 end_of_record
 TN:
 SF:src/utils/errorUtils.ts

@@ -59,8 +59,8 @@ describe('Recommendation service test',() => {
         expect(removeRecommendation).not.toHaveBeenCalled();
       });
 
-      it("Should update vote for score > -5 (-1)", async() => {
-        const recommendation = returnRecomendationWithScore(10);
+      it("Should update vote for score < -5 (-1)", async() => {
+        const recommendation = returnRecomendationWithScore(-6);
 
         jest.spyOn(recommendationRepository, 'find').mockResolvedValueOnce(recommendation);
         const updatedRecommendation = jest.spyOn(recommendationRepository, 'updateScore').mockResolvedValueOnce(recommendation);
@@ -69,7 +69,7 @@ describe('Recommendation service test',() => {
         await recommendationService.downvote(recommendation.id);
       
         expect(updatedRecommendation).toHaveBeenCalled();
-        expect(removeRecommendation).not.toHaveBeenCalled();
+        expect(removeRecommendation).toHaveBeenCalled();
       });
 
       it("Should get random recommendations (> 0.7)", async() => {
