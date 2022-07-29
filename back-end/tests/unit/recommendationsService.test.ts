@@ -23,8 +23,8 @@ describe('Recommendation service test',() => {
         const recommendation = returnRecomendationWithScore(0);
 
         jest.spyOn(recommendationRepository, 'findByName').mockResolvedValueOnce(recommendation);
-      
-        expect(recommendationService.insert(recommendation)).rejects.toEqual(conflictError("Recommendations names must be unique"));
+
+        expect(recommendationService.insert(recommendation)).rejects.toEqual({ message: "Recommendations names must be unique", type: "conflict"});
       })
 
       it("Should update vote (+1)", async() => {
@@ -43,7 +43,7 @@ describe('Recommendation service test',() => {
       it("Should return error for update vote -> recommendation not found", async() => {
         jest.spyOn(recommendationRepository, 'find').mockResolvedValueOnce(undefined);
 
-        expect(recommendationService.upvote(1)).rejects.toEqual(notFoundError());
+        expect(recommendationService.upvote(1)).rejects.toEqual({ message: "", type: "not_found"});
       });
 
       it("Should update vote for score > -5 (-1)", async() => {
@@ -101,9 +101,8 @@ describe('Recommendation service test',() => {
 
         jest.spyOn(Math, 'random').mockReturnValue(0.6);
         const recommendationList = jest.spyOn(recommendationRepository, 'findAll').mockResolvedValueOnce([]);
-      
-        expect(recommendationList).toHaveBeenCalled();
-        expect(recommendationService.getRandom()).rejects.toEqual(notFoundError());
+
+        expect(recommendationService.getRandom()).rejects.toEqual({ message: "", type: "not_found"});
       });
 
   });
