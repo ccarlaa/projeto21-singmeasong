@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1659141080210" clover="3.2.0">
-  <project timestamp="1659141080211" name="All files">
-    <metrics statements="102" coveredstatements="93" conditionals="29" coveredconditionals="18" methods="34" coveredmethods="31" elements="165" coveredelements="142" complexity="0" loc="102" ncloc="102" packages="9" files="10" classes="10"/>
+<coverage generated="1659141738095" clover="3.2.0">
+  <project timestamp="1659141738095" name="All files">
+    <metrics statements="102" coveredstatements="98" conditionals="29" coveredconditionals="20" methods="34" coveredmethods="32" elements="165" coveredelements="150" complexity="0" loc="102" ncloc="102" packages="9" files="10" classes="10"/>
     <package name="src">
       <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="app.ts" path="/home/carla/Documentos/projeto21-singmeasong/sing-me-a-song-main/back-end/src/app.ts">
@@ -19,9 +19,9 @@
       </file>
     </package>
     <package name="src.controllers">
-      <metrics statements="22" coveredstatements="20" conditionals="1" coveredconditionals="1" methods="7" coveredmethods="6"/>
+      <metrics statements="22" coveredstatements="22" conditionals="1" coveredconditionals="1" methods="7" coveredmethods="7"/>
       <file name="recommendationController.ts" path="/home/carla/Documentos/projeto21-singmeasong/sing-me-a-song-main/back-end/src/controllers/recommendationController.ts">
-        <metrics statements="22" coveredstatements="20" conditionals="1" coveredconditionals="1" methods="7" coveredmethods="6"/>
+        <metrics statements="22" coveredstatements="22" conditionals="1" coveredconditionals="1" methods="7" coveredmethods="7"/>
         <line num="7" count="3" type="stmt"/>
         <line num="8" count="3" type="cond" truecount="1" falsecount="0"/>
         <line num="9" count="1" type="stmt"/>
@@ -33,8 +33,8 @@
         <line num="26" count="1" type="stmt"/>
         <line num="28" count="1" type="stmt"/>
         <line num="30" count="1" type="stmt"/>
-        <line num="34" count="0" type="stmt"/>
-        <line num="36" count="0" type="stmt"/>
+        <line num="34" count="2" type="stmt"/>
+        <line num="36" count="1" type="stmt"/>
         <line num="40" count="1" type="stmt"/>
         <line num="41" count="1" type="stmt"/>
         <line num="45" count="1" type="stmt"/>
@@ -50,23 +50,23 @@
       <metrics statements="4" coveredstatements="3" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
       <file name="errorHandlerMiddleware.ts" path="/home/carla/Documentos/projeto21-singmeasong/sing-me-a-song-main/back-end/src/middlewares/errorHandlerMiddleware.ts">
         <metrics statements="4" coveredstatements="3" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
-        <line num="14" count="1" type="stmt"/>
-        <line num="16" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="17" count="1" type="stmt"/>
+        <line num="14" count="2" type="stmt"/>
+        <line num="16" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="17" count="2" type="stmt"/>
         <line num="20" count="0" type="stmt"/>
       </file>
     </package>
     <package name="src.repositories">
-      <metrics statements="12" coveredstatements="9" conditionals="1" coveredconditionals="1" methods="8" coveredmethods="7"/>
+      <metrics statements="12" coveredstatements="11" conditionals="1" coveredconditionals="1" methods="8" coveredmethods="7"/>
       <file name="recommendationRepository.ts" path="/home/carla/Documentos/projeto21-singmeasong/sing-me-a-song-main/back-end/src/repositories/recommendationRepository.ts">
-        <metrics statements="12" coveredstatements="9" conditionals="1" coveredconditionals="1" methods="8" coveredmethods="7"/>
+        <metrics statements="12" coveredstatements="11" conditionals="1" coveredconditionals="1" methods="8" coveredmethods="7"/>
         <line num="6" count="2" type="stmt"/>
-        <line num="17" count="2" type="stmt"/>
-        <line num="19" count="2" type="stmt"/>
+        <line num="17" count="6" type="stmt"/>
+        <line num="19" count="6" type="stmt"/>
         <line num="27" count="1" type="stmt"/>
-        <line num="36" count="2" type="cond" truecount="1" falsecount="0"/>
-        <line num="38" count="0" type="stmt"/>
-        <line num="40" count="0" type="stmt"/>
+        <line num="36" count="6" type="cond" truecount="1" falsecount="0"/>
+        <line num="38" count="2" type="stmt"/>
+        <line num="40" count="2" type="stmt"/>
         <line num="46" count="3" type="stmt"/>
         <line num="52" count="2" type="stmt"/>
         <line num="58" count="2" type="stmt"/>
@@ -97,9 +97,9 @@
       </file>
     </package>
     <package name="src.services">
-      <metrics statements="30" coveredstatements="29" conditionals="6" coveredconditionals="5" methods="9" coveredmethods="9"/>
+      <metrics statements="30" coveredstatements="30" conditionals="6" coveredconditionals="6" methods="9" coveredmethods="9"/>
       <file name="recommendationsService.ts" path="/home/carla/Documentos/projeto21-singmeasong/sing-me-a-song-main/back-end/src/services/recommendationsService.ts">
-        <metrics statements="30" coveredstatements="29" conditionals="6" coveredconditionals="5" methods="9" coveredmethods="9"/>
+        <metrics statements="30" coveredstatements="30" conditionals="6" coveredconditionals="6" methods="9" coveredmethods="9"/>
         <line num="8" count="4" type="stmt"/>
         <line num="12" count="4" type="cond" truecount="1" falsecount="0"/>
         <line num="13" count="1" type="stmt"/>
@@ -115,35 +115,35 @@
         <line num="41" count="6" type="stmt"/>
         <line num="45" count="1" type="stmt"/>
         <line num="49" count="1" type="stmt"/>
-        <line num="53" count="3" type="stmt"/>
-        <line num="54" count="3" type="stmt"/>
-        <line num="56" count="3" type="stmt"/>
-        <line num="57" count="3" type="cond" truecount="0" falsecount="1"/>
-        <line num="58" count="0" type="stmt"/>
+        <line num="53" count="5" type="stmt"/>
+        <line num="54" count="5" type="stmt"/>
+        <line num="56" count="5" type="stmt"/>
+        <line num="57" count="5" type="cond" truecount="1" falsecount="0"/>
+        <line num="58" count="2" type="stmt"/>
         <line num="61" count="3" type="stmt"/>
         <line num="62" count="3" type="stmt"/>
-        <line num="66" count="3" type="stmt"/>
-        <line num="71" count="3" type="cond" truecount="1" falsecount="0"/>
+        <line num="66" count="5" type="stmt"/>
+        <line num="71" count="5" type="cond" truecount="1" falsecount="0"/>
         <line num="72" count="2" type="stmt"/>
-        <line num="75" count="1" type="stmt"/>
-        <line num="79" count="3" type="cond" truecount="1" falsecount="0"/>
-        <line num="80" count="2" type="stmt"/>
+        <line num="75" count="3" type="stmt"/>
+        <line num="79" count="5" type="cond" truecount="1" falsecount="0"/>
+        <line num="80" count="4" type="stmt"/>
         <line num="83" count="1" type="stmt"/>
         <line num="86" count="2" type="stmt"/>
       </file>
     </package>
     <package name="src.utils">
-      <metrics statements="10" coveredstatements="8" conditionals="20" coveredconditionals="10" methods="6" coveredmethods="5"/>
+      <metrics statements="10" coveredstatements="8" conditionals="20" coveredconditionals="11" methods="6" coveredmethods="5"/>
       <file name="errorUtils.ts" path="/home/carla/Documentos/projeto21-singmeasong/sing-me-a-song-main/back-end/src/utils/errorUtils.ts">
-        <metrics statements="10" coveredstatements="8" conditionals="20" coveredconditionals="10" methods="6" coveredmethods="5"/>
-        <line num="8" count="1" type="stmt"/>
-        <line num="12" count="1" type="cond" truecount="0" falsecount="1"/>
-        <line num="13" count="1" type="cond" truecount="0" falsecount="1"/>
+        <metrics statements="10" coveredstatements="8" conditionals="20" coveredconditionals="11" methods="6" coveredmethods="5"/>
+        <line num="8" count="2" type="stmt"/>
+        <line num="12" count="2" type="cond" truecount="0" falsecount="1"/>
+        <line num="13" count="2" type="cond" truecount="1" falsecount="0"/>
         <line num="14" count="1" type="cond" truecount="0" falsecount="1"/>
         <line num="15" count="1" type="cond" truecount="1" falsecount="0"/>
         <line num="16" count="0" type="stmt"/>
         <line num="20" count="1" type="cond" truecount="3" falsecount="1"/>
-        <line num="24" count="1" type="cond" truecount="3" falsecount="1"/>
+        <line num="24" count="3" type="cond" truecount="3" falsecount="1"/>
         <line num="28" count="0" type="cond" truecount="0" falsecount="4"/>
         <line num="32" count="1" type="cond" truecount="3" falsecount="1"/>
       </file>

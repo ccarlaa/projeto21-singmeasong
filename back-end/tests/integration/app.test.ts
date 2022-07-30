@@ -88,6 +88,24 @@ describe("/recommendations/:id/downvote POST", () => {
     });
 })
 
+describe("/recommendations/random GET", () => {
+    it("Return 200 for valid params", async() => {
+        const result = await supertest(app).get("/recommendations/random");
+        const status = result.status;
+
+        expect(status).toEqual(200);
+        expect(result.body).not.toBeNull()
+    });
+
+    it("Return not found error", async() => {
+        await prisma.$executeRaw`TRUNCATE TABLE recommendations`
+        const result = await supertest(app).get("/recommendations/random");
+        const status = result.status;
+
+        expect(status).toEqual(404);
+    })
+})
+
 afterAll(async () => {
     await prisma.$disconnect();
 })
