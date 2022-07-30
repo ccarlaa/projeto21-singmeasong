@@ -2,7 +2,6 @@ import { jest } from '@jest/globals';
 
 import { recommendationRepository } from "../../src/repositories/recommendationRepository.js";
 import recommendationService from "../../src/services/recommendationsService.js";
-import { conflictError, notFoundError } from "../../src/utils/errorUtils.js";
 import { returnRecomendationWithScore } from '../factory/recommendationsFactory.js';
 
 describe('Recommendation service test',() => {
@@ -27,7 +26,7 @@ describe('Recommendation service test',() => {
         try {
           await recommendationService.insert(recommendation)
         } catch(error) {
-          expect(error).toEqual(conflictError("Recommendations names must be unique"))
+          expect(error).toEqual({ message: "Recommendations names must be unique", type: "conflict" })
         }
       })
 
@@ -50,7 +49,7 @@ describe('Recommendation service test',() => {
         try {
           await recommendationService.upvote(1)
         } catch(error) {
-          expect(error).toEqual(notFoundError())
+          expect(error).toEqual({ message: "", type: "not_found" })
         }
 
       });
@@ -114,7 +113,7 @@ describe('Recommendation service test',() => {
         try {
           await recommendationService.getRandom()
         } catch(error) {
-          expect(error).toEqual(notFoundError())
+          expect(error).toEqual({ message: "", type: "not_found" })
         }
       });
 
