@@ -1,14 +1,11 @@
 import app from "../../src/app.js"
 import { prisma } from '../../src/database.js'
 import supertest from 'supertest';
-import { Recommendation } from "@prisma/client";
 
-import { newRecomendation, randomInt, returnRecomendationWithScore } from "../factory/recommendationsFactory.js"
+import { newRecomendation, randomInt } from "../factory/recommendationsFactory.js"
 
-beforeAll(async () => {
-    await prisma.$executeRaw`TRUNCATE TABLE recommendations`;
-    const recomendation = returnRecomendationWithScore(10)
-    await prisma.recommendation.create({data: recomendation})
+beforeEach(async () => {
+    await prisma.$executeRaw`TRUNCATE TABLE recommendations RESTART IDENTITY`
 })
 
 describe("/recommendations/ POST", () => {
@@ -62,6 +59,8 @@ describe("/recommendations/top/:amount GET", () => {
 
 describe("/recommendations/:id GET", () => {
     it("Return 200 for valid params", async() => {
+        const recomendation = newRecomendation();
+        await supertest(app).post("/recommendations/").send(recomendation);
         const result = await supertest(app).get(`/recommendations/1`);
         const status = result.status;
 
@@ -72,6 +71,8 @@ describe("/recommendations/:id GET", () => {
 
 describe("/recommendations/:id/upvote POST", () => {
     it("Return 200 for valid params", async() => {
+        const recomendation = newRecomendation();
+        await supertest(app).post("/recommendations/").send(recomendation);
         const result = await supertest(app).post(`/recommendations/1/upvote`);
         const status = result.status;
 
@@ -81,15 +82,31 @@ describe("/recommendations/:id/upvote POST", () => {
 
 describe("/recommendations/:id/downvote POST", () => {
     it("Return 200 for valid params", async() => {
+        const recomendation = newRecomendation();
+        await supertest(app).post("/recommendations/").send(recomendation);
         const result = await supertest(app).post(`/recommendations/1/downvote`);
         const status = result.status;
 
         expect(status).toEqual(200);
     });
+
+    it("Return 404 for deleted recommendation with votes less than -5", async() => {
+        const recomendation = newRecomendation();
+        await supertest(app).post("/recommendations/").send(recomendation);
+        for(let i = 0; i < 6; i++) {
+            await supertest(app).post(`/recommendations/1/downvote`);
+        }
+        const result = await supertest(app).get(`/recommendations/1`);
+        const status = result.status;
+
+        expect(status).toEqual(404);
+    });
 })
 
 describe("/recommendations/random GET", () => {
     it("Return 200 for valid params", async() => {
+        const recomendation = newRecomendation();
+        await supertest(app).post("/recommendations/").send(recomendation);
         const result = await supertest(app).get("/recommendations/random");
         const status = result.status;
 
@@ -98,7 +115,6 @@ describe("/recommendations/random GET", () => {
     });
 
     it("Return not found error", async() => {
-        await prisma.$executeRaw`TRUNCATE TABLE recommendations`
         const result = await supertest(app).get("/recommendations/random");
         const status = result.status;
 
