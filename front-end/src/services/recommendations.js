@@ -1,5 +1,5 @@
 import api from "./api";
-
+console.log(api)
 export async function list() {
   const response = await api.get("/recommendations");
   return response.data;
